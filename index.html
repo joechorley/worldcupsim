@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/group.css">
+    <title>World Cup 2022 Simulator</title>
+    <meta name="description" content="">
+    <meta name="author" content="Joe Chorley">
+</head>
+<body>
+
+    <div id="matchDetails" style="display: none;">
+        <div class="matchDetailsBox">
+            <div class="closeButton" onclick="toggleMatchDetails(false)"></div>
+            <h1 id="matchDetailsName">Group A Match - Day 1</h1>
+            <div class="teams">
+                <div>
+                    <div class="flag" id="detailsFlag_0"></div>
+                    <div class="detailsTeam" id="detailsTeam_0">Team 1</div>
+                </div>
+                <div>
+                    <div class="flag" id="detailsFlag_1"></div>
+                    <div class="detailsTeam" id="detailsTeam_1">Team 2</div>
+                </div>
+            </div>
+
+            <div class="scores">
+                <div id="detailsScore_0">0</div>
+                <div class="mid">-</div>
+                <div id="detailsScore_1">0</div>
+            </div>
+
+            <div class="penalties" id="detailsPenalties">
+                <div id="detailsPenalties_0">0</div>
+                <div class="mid">Penalties</div>
+                <div id="detailsPenalties_1">0</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="detailsEvents">
+                <div id="detailsEvents_0"></div>
+                <div id="detailsEvents_1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="matchDetailsBG" style="display: none;"></div>
+
+    <div class="header">
+        <div class="central">
+            <h1>WORLD CUP 2022 SIMULATOR</h1>
+            <div class="navigation">
+                <a class="navButton" onclick="changePage(0)" id="navButton_0" style="color:#3EAEFE;">KNOCKOUTS<div id="navSelect_0"></div></a>
+                <a class="navButton" onclick="changePage(1)" id="navButton_1">GROUPS<div id="navSelect_1" style="display:none;"></div></a>
+                <a class="navButton" onclick="changePage(2)" id="navButton_2">STATISTICS<div id="navSelect_2" style="display:none;"></div></a>
+            </div>
+        </div>
+    </div>
+    <div class="controlPanel">
+        <div class="central">
+            <div class="simTime">
+                <p id="controlDay">DAY 0</p>
+                <p id="controlStage">Setup Stage</p>
+            </div>
+            <div class="controls">
+                <div id="controls_group">
+                    <div>Set up Groups:</div>
+                    <button onclick="setTeams(false)">2022</button>
+                    <button onclick="setTeams(true)">Randomise</button>
+                    <button onclick="confirmGroups()" id="confirmButton" class="buttonDisable">CONFIRM</button>
+                </div>
+                <div id="controls_sim" style="display: none;">
+                    <button onclick="simDay()" id="buttonSimDay">Simulate Day <span id="buttonDay">1</span></button>
+                    <button onclick="simAll()" id="buttonSimAll">Simulate All</button>
+                    <button onclick="simulateAll(false)" style="display:none;">Pause Simulate</button>
+                </div>
+                <div id="controls_end" style="display: none;">
+                    <button onclick="reset()" >New Tournament</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page clearfix" id="page_1" style="display:none;">
+        <div class="central">
+            <div class="group">
+                <h2>GROUP A</h2>
+                <div class="table" id="table_0"></div>
+                <div class="groupMatches" id="groupMatches_0">
+                    <div class="match groupMatch" id="matchGroup_0_0"></div>
+                    <div class="match groupMatch" id="matchGroup_0_1"></div>
+                    <div class="match groupMatch" id="matchGroup_0_2"></div>
+                    <div class="match groupMatch" id="matchGroup_0_3"></div>
+                    <div class="match groupMatch" id="matchGroup_0_4"></div>
+                    <div class="match groupMatch" id="matchGroup_0_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP B</h2>
+                <div class="table" id="table_1"></div>
+                <div class="groupMatches" id="groupMatches_1">
+                    <div class="match groupMatch" id="matchGroup_1_0"></div>
+                    <div class="match groupMatch" id="matchGroup_1_1"></div>
+                    <div class="match groupMatch" id="matchGroup_1_2"></div>
+                    <div class="match groupMatch" id="matchGroup_1_3"></div>
+                    <div class="match groupMatch" id="matchGroup_1_4"></div>
+                    <div class="match groupMatch" id="matchGroup_1_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP C</h2>
+                <div class="table" id="table_2"></div>
+                <div class="groupMatches" id="groupMatches_2">
+                    <div class="match groupMatch" id="matchGroup_2_0"></div>
+                    <div class="match groupMatch" id="matchGroup_2_1"></div>
+                    <div class="match groupMatch" id="matchGroup_2_2"></div>
+                    <div class="match groupMatch" id="matchGroup_2_3"></div>
+                    <div class="match groupMatch" id="matchGroup_2_4"></div>
+                    <div class="match groupMatch" id="matchGroup_2_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP D</h2>
+                <div class="table" id="table_3"></div>
+                <div class="groupMatches" id="groupMatches_3">
+                    <div class="match groupMatch" id="matchGroup_3_0"></div>
+                    <div class="match groupMatch" id="matchGroup_3_1"></div>
+                    <div class="match groupMatch" id="matchGroup_3_2"></div>
+                    <div class="match groupMatch" id="matchGroup_3_3"></div>
+                    <div class="match groupMatch" id="matchGroup_3_4"></div>
+                    <div class="match groupMatch" id="matchGroup_3_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP E</h2>
+                <div class="table" id="table_4"></div>
+                <div class="groupMatches" id="groupMatches_4">
+                    <div class="match groupMatch" id="matchGroup_4_0"></div>
+                    <div class="match groupMatch" id="matchGroup_4_1"></div>
+                    <div class="match groupMatch" id="matchGroup_4_2"></div>
+                    <div class="match groupMatch" id="matchGroup_4_3"></div>
+                    <div class="match groupMatch" id="matchGroup_4_4"></div>
+                    <div class="match groupMatch" id="matchGroup_4_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP F</h2>
+                <div class="table" id="table_5"></div>
+                <div class="groupMatches" id="groupMatches_5">
+                    <div class="match groupMatch" id="matchGroup_5_0"></div>
+                    <div class="match groupMatch" id="matchGroup_5_1"></div>
+                    <div class="match groupMatch" id="matchGroup_5_2"></div>
+                    <div class="match groupMatch" id="matchGroup_5_3"></div>
+                    <div class="match groupMatch" id="matchGroup_5_4"></div>
+                    <div class="match groupMatch" id="matchGroup_5_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP G</h2>
+                <div class="table" id="table_6"></div>
+                <div class="groupMatches" id="groupMatches_6">
+                    <div class="match groupMatch" id="matchGroup_6_0"></div>
+                    <div class="match groupMatch" id="matchGroup_6_1"></div>
+                    <div class="match groupMatch" id="matchGroup_6_2"></div>
+                    <div class="match groupMatch" id="matchGroup_6_3"></div>
+                    <div class="match groupMatch" id="matchGroup_6_4"></div>
+                    <div class="match groupMatch" id="matchGroup_6_5"></div>
+                </div>
+            </div>
+            <div class="group">
+                <h2>GROUP H</h2>
+                <div class="table" id="table_7"></div>
+                <div class="groupMatches" id="groupMatches_7">
+                    <div class="match groupMatch" id="matchGroup_7_0"></div>
+                    <div class="match groupMatch" id="matchGroup_7_1"></div>
+                    <div class="match groupMatch" id="matchGroup_7_2"></div>
+                    <div class="match groupMatch" id="matchGroup_7_3"></div>
+                    <div class="match groupMatch" id="matchGroup_7_4"></div>
+                    <div class="match groupMatch" id="matchGroup_7_5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page clearfix" id="page_0">
+        <div class="central">
+            <div class="knockoutCol">
+                <div class="knockoutHeader"><p>TOP 16</p></div>
+                <div class="match knockoutMatch0" id="top16_0"></div>
+                <div class="match knockoutMatch0" id="top16_1"></div>
+                <div class="match knockoutMatch0" id="top16_2"></div>
+                <div class="match knockoutMatch0" id="top16_3"></div>
+                <div class="match knockoutMatch0" id="top16_4"></div>
+                <div class="match knockoutMatch0" id="top16_5"></div>
+                <div class="match knockoutMatch0" id="top16_6"></div>
+                <div class="match knockoutMatch0" id="top16_7"></div>
+            </div>
+
+            <div class="knockoutCol">
+                <div class="knockoutHeader"><p>QUARTER FINALS</p></div>
+                <div class="match knockoutMatch1" id="quarters_0"></div>
+                <div class="match knockoutMatch1" id="quarters_1"></div>
+                <div class="match knockoutMatch1" id="quarters_2"></div>
+                <div class="match knockoutMatch1" id="quarters_3"></div>
+            </div>
+
+            <div class="knockoutCol">
+                <div class="knockoutHeader"><p>SEMI FINALS</p></div>
+                <div class="match knockoutMatch2" id="semis_0"></div>
+                <div class="match knockoutMatch2" id="semis_1"></div>
+            </div>
+
+            <div class="finalCol">
+                <div class="knockoutHeader"><p>GRAND FINALS</p></div>
+                <div class="match knockoutMatch3" id="final"></div>
+                <!--<div class="match knockoutMatch" id="third"></div>-->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="page clearfix" id="page_2" style="display:none;">
+        <div class="central">
+            <div id="stats"></div>
+        </div>
+    </div>
+
+</body>
+<script src="assets/js/functions.js"></script>
+<script src="assets/js/teams.js"></script>
+<script src="assets/js/stages.js"></script>
+<script src="assets/js/init.js"></script>
+<script src="assets/js/main.js"></script>
+
+</html>

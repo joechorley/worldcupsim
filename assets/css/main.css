@@ -1,0 +1,513 @@
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+html, body {
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ccc;
+}
+
+
+
+
+.central {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+
+
+.header {
+    width: 100%;
+    height: 160px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1;
+    margin: 0;
+}
+
+.header h1 {
+    position: absolute;
+    top: 25px;
+    color: #4D4D4D;
+    margin-left: 10px;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 0;
+}
+
+.navigation .navButton {
+    width: 150px;
+    position: relative;
+    float: left;
+    color: #999999;
+    font-size: 12pt;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+}
+.navigation .navButton:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+.navigation .navButton div {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #3EAEFE;
+}
+
+
+
+.controlPanel {
+    background-color: #fff;
+    width: 100%;
+    height: 160px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    color: #999999;
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.simTime {
+    width: 150px;
+    position: relative;
+    float: left;
+    margin: 45px 0 0 10px;
+    border-right: 1px solid #ccc;
+}
+.simTime p {
+    margin: 10px 0;
+}
+.controls {
+    position: relative;
+    float: right;
+    margin: 45px 10px 0 0;
+}
+
+#controls_group div {
+    position: relative;
+    float: left;
+    margin: 20px 40px 0 0;
+}
+
+button {
+    padding: 20px;
+    background-color: #3EAEFE;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #62beff;
+}
+
+.buttonDisable {
+    background-color: #ccc;
+}
+.buttonDisable:hover {
+    cursor: default;
+    background-color: #ccc;
+}
+
+.page {
+    position: relative;
+    margin-top: 160px;
+    margin-bottom: 260px;
+}
+
+
+
+#page_0 {
+    margin-top: 220px;
+}
+.knockoutCol {
+    width: 20%;
+    position: relative;
+    float: left;
+}
+.finalCol {
+    width: 40%;
+    position: relative;
+    float: left;
+}
+
+
+.knockoutHeader {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    font-size: 10pt;
+    font-weight: normal;
+    color: #4D4D4D;
+}
+
+.knockoutHeader p {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.knockoutMatch0 {
+    margin: 0 0 20px;
+}
+.knockoutMatch1 {
+    margin: 50px 0 60px;
+    display: inline-block;
+}
+.knockoutMatch2 {
+    margin: 140px 0 155px;
+    display: inline-block;
+}
+.knockoutMatch3 {
+    margin: 320px 0 0;
+    display: inline-block;
+}
+
+
+.match {
+    width: 180px;
+    height: 70px;
+    position: relative;
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+.clickable:hover {
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.groupMatch {
+    float: left;
+    margin: 0 0 20px 20px;
+}
+
+.matchTeam0 {
+    width: 168px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    left: 12px;
+}
+.matchTeam1 {
+    width: 168px;
+    height: 25px;
+    position: absolute;
+    top: 40px;
+    left: 12px;
+}
+.match .matchDay {
+    font-size: 8pt;
+    text-transform: uppercase;
+    margin: 2px 0 0 5px;
+}
+
+.match .matchFlag {
+    width: 25px !important;
+    height: 25px !important;
+    background-image: url("../img/flags/_template.png");
+    background-size: contain;
+    position:relative;
+    float: left;
+}
+.match .matchTeam {
+    width: 105px;
+    position:relative;
+    float: left;
+    font-size: 9pt;
+    margin: 5px 0 0 5px;
+}
+.match .matchScore {
+    width: 20px;
+    position:relative;
+    float: left;
+    font-weight: bold;
+    margin: 2px 0 0;
+
+}
+.match .matchPenalty {
+    color: #e61d1d;
+    font-size: 8pt;
+    position:relative;
+    float: left;
+    margin: 4px 0 0;
+}
+.match .progressBar {
+    width: 0%;
+    height: 4px;
+    background-color: #3EAEFE;
+    position: absolute;
+    top: 38px;
+}
+
+#final {
+    width: 280px;
+    height: 100px;
+    margin: 310px 0 0;
+}
+#final .matchTeam0 {
+    width: 220px;
+    top: 18px;
+}
+#final .matchTeam1 {
+    width: 220px;
+    top: 56px;
+}
+#final .matchTeam0 .matchFlag, #final .matchTeam1 .matchFlag {
+    width: 40px !important;
+    height: 40px !important;
+}
+#final .matchTeam0 .matchTeam, #final .matchTeam1 .matchTeam {
+    width: 130px;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 12px 0 0 18px;
+}
+#final .matchTeam0 .matchScore, #final .matchTeam1 .matchScore {
+    font-size: 16pt;
+    margin: 8px 0 0;
+}
+#final .matchTeam0 .matchPenalty, #final .matchTeam1 .matchPenalty {
+    font-size: 10pt;
+    margin: 12px 0 0;
+}
+
+#final .progressBar {
+    top: 56px;
+}
+
+
+#matchDetailsBG {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+#matchDetails {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+}
+.matchDetailsBox {
+    width: 560px;
+    height: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    background-color: #E6E6E6;
+    border-radius: 10px;
+    color: #4D4D4D;
+}
+.closeButton {
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/icons/close.png);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 99;
+}
+.closeButton:hover {
+    cursor: pointer;
+    background-image: url(../img/icons/close_hover.png);
+}
+
+.matchDetailsBox h1 {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    left: 10%;
+    top: 35px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #999999;
+    font-size: 12pt;
+}
+
+.matchDetailsBox .teams {
+    width: 100%;
+    margin: 75px 0 0;
+}
+.matchDetailsBox .teams div {
+    width: 50%;
+    position: relative;
+    float: left;
+}
+.detailsTeam {
+    position: absolute;
+    font-size: 16pt;
+    font-weight: bold;
+    margin: 15px 0 0 10px;
+    text-transform: uppercase;
+}
+
+#detailsFlag_0 {
+    margin: 0 0 0 40px;
+}
+
+#detailsTeam_0 {
+    width: unset;
+}
+
+#detailsFlag_1 {
+    float: right;
+    margin: 0 40px 0 0;
+}
+
+#detailsTeam_1 {
+    width: unset;
+    float: right;
+    text-align: right;
+    margin: 15px 10px 0 0;
+}
+
+.matchDetailsBox .scores {
+    width: 100%;
+    margin: 150px 0 0;
+    font-size: 26pt;
+    font-weight: bold;
+}
+.matchDetailsBox .scores div {
+    width: 45%;
+    position: relative;
+    float: left;
+    text-align: center;
+}
+.matchDetailsBox .scores .mid {
+    width: 10%;
+}
+.matchDetailsBox .penalties {
+    width: 100%;
+    margin: 200px 0 0;
+    color: #C1272D;
+    text-transform: uppercase;
+}
+
+.matchDetailsBox .penalties div {
+    width: 40%;
+    position: relative;
+    float: left;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+}
+.matchDetailsBox .penalties .mid {
+    width: 20%;
+    font-size: 10pt;
+    font-weight: normal;
+    margin: 6px 0 0;
+}
+#detailsPenalties_0 {
+    text-align: right;
+}
+#detailsPenalties_1 {
+    text-align: left;
+}
+
+.matchDetailsBox .divider {
+    width: 80%;
+    height: 2px;
+    background-color: #CCCCCC;
+    position: relative;
+    margin: 240px auto 0;
+}
+
+.detailsEvents {
+    font-size: 10pt;
+    margin: 10px 0 0;
+}
+
+#detailsEvents_0 {
+    position: absolute;
+    left: 22%;
+}
+
+#detailsEvents_1 {
+    position: absolute;
+    left: 64%;
+}
+.detailGoal {
+    height: 20px;
+    margin: 15px 0;
+    background-image: url(../img/icons/goal.png);
+    background-repeat: no-repeat;
+    padding: 0 0 0 28px;
+}
+
+#stats {
+    width: 100%;
+    margin: 60px 0 0;
+    display: inline-block;
+}
+
+.stat_row {
+    width: 100%;
+    height: 50px;
+    background-color: #E6E6E6;
+    color: #808080;
+    border-bottom: 1px solid #ccc;
+}
+
+.stat_row div {
+    width: 60px;
+    position: relative;
+    float: left;
+    text-align: center;
+    padding: 18px 0 0;
+}
+
+.stat_team {
+    width: 205px !important;
+    text-align: left !important;
+    color: #4D4D4D;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+.stat_top {
+    background-color: unset !important;
+    height: 20px;
+    color: #4D4D4D;
+    font-size: 10pt;
+}
+.stat_top div {
+    padding: 0;
+}
+
+.stat_team_header {
+    width: 255px !important;
+    text-align: left !important;
+    margin-left: 10px;
+}
